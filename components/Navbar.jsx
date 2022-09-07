@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { close, logo, menu } from "../public/assets";
 import { navLinks } from "../utils/content";
@@ -9,12 +10,16 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar">
-      <div className="relative w-[124px] h-[32px]">
-        <Image src={logo} alt="hoobank" layout="fill" placeholder="empty" />
-      </div>
+    <nav className="flex items-center justify-between w-full py-6 navbar">
+      <Link href="">
+        <a>
+          <div className="relative w-[124px] h-[32px]">
+            <Image src={logo} alt="hoobank" layout="fill" placeholder="empty" />
+          </div>
+        </a>
+      </Link>
 
-      <ul className="list-none sm:flex hidden justify-end items-center flex-1">
+      <ul className="items-center justify-end flex-1 hidden list-none sm:flex">
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
@@ -28,7 +33,7 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <div className="sm:hidden flex flex-1 justify-end items-center">
+      <div className="flex items-center justify-end flex-1 sm:hidden">
         <div
           className="relative w-[28px] h-[28px] object-contain"
           onClick={() => setToggle(!toggle)}
@@ -46,7 +51,7 @@ const Navbar = () => {
             !toggle ? "hidden" : "flex"
           } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
         >
-          <ul className="list-none flex justify-end items-start flex-1 flex-col">
+          <ul className="flex flex-col items-start justify-end flex-1 list-none">
             {navLinks.map((nav, index) => (
               <li
                 key={nav.id}
