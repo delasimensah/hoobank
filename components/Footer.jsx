@@ -5,7 +5,9 @@ import { footerLinks, socialMedia } from "../utils/content";
 
 const Footer = () => {
   return (
-    <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
+    <section
+      className={`${styles.flexCenter} ${styles.paddingY} flex-col md:mt-20`}
+    >
       <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
         <div className="flex-[1] flex flex-col justify-start mr-10">
           <div className="relative w-[266px] h-[72.14px] object-contain">
@@ -26,7 +28,7 @@ const Footer = () => {
               <h4 className="font-poppins font-medium text-[18px] leading-[27px] text-white">
                 {footerlink.title}
               </h4>
-              <ul className="list-none mt-4">
+              <ul className="mt-4 list-none">
                 {footerlink.links.map((link, index) => (
                   <li
                     key={link.name}
@@ -48,7 +50,7 @@ const Footer = () => {
           Copyright Ⓒ 2022 HooBank. All Rights Reserved.
         </p>
 
-        <div className="flex flex-row md:mt-0 mt-6">
+        <div className="flex flex-row mt-6 md:mt-0">
           {socialMedia.map((social, index) => (
             <div
               key={social.id}

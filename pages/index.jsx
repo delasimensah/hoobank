@@ -31,6 +31,9 @@ const Home = () => {
     <>
       <Head>
         <title>Hoobank</title>
+        <meta name="description" content="Landing website for Hoobank" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon-32x32.png" />
       </Head>
 
       <div className="w-full overflow-hidden bg-primary">
